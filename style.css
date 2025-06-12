@@ -4,10 +4,10 @@
 :root {
   --bgcol: rgb(80 250 190);
   --textcol: hsl(0 0 12);
-  --smallfont: max(1rem, 2vw);
+  --smallfont: max(1rem, 1vw);
   --largefont: clamp(24px, 2rem, 4vw);
   --pfpwidth: 300px;
-  --textmargin: 16px;
+  --textmargin: 12px;
 }
 
 /* Here we are using the universal selector */
@@ -76,6 +76,7 @@ h2 {
 /* Here, we're applying styles to our large paragraph bio */
 .card-text p {
   font-size: var(--smallfont);
+  margin: 4px 0;
 }
 
 /* Media query overrides */
