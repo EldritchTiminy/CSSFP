@@ -4,7 +4,7 @@
 :root {
   --bgcol: rgb(80 250 190);
   --textcol: hsl(0 0 12);
-  --smallfont: max(1rem, 1vw);
+  --smallfont: 1rem;
   --largefont: clamp(24px, 2rem, 4vw);
   --pfpwidth: 300px;
   --textmargin: 12px;
