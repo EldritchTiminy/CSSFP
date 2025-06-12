@@ -34,6 +34,7 @@ body {
 .card-container {
   max-width: 80%;
   display: flex;
+  flex-direction: column;
 }
 
 /* This targets the container that houses Bob's profile pic */
