@@ -4,9 +4,10 @@
 :root {
   --bgcol: rgb(80 250 190);
   --textcol: hsl(0 0 12);
-  --smallfont: clamp(8px, 1rem, 1.5rem);
-  --largefont: clamp(1.5rem, 2rem, 3rem);
+  --smallfont: max(1rem, 2vw);
+  --largefont: clamp(24px, 2rem, 4vw);
   --pfpwidth: 300px;
+  --textmargin: 16px;
 }
 
 /* Here we are using the universal selector */
@@ -17,7 +18,7 @@ which is exactly how we're using it here */
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 /* This body selector is primarily used for actually applying styles */
@@ -34,9 +35,10 @@ body {
 /* It houses all of the content that is actually seen on the page */
 .card-container {
   margin: 24px 0;
-  max-width: 80%;
+  width: 85%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* This targets the container that houses Bob's profile pic */
@@ -45,6 +47,7 @@ body {
   width: var(--pfpwidth);
   height: var(--pfpwidth);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 /* This targets Bob Managerman's profile picture */
@@ -62,14 +65,16 @@ h2 {
 
 /* This targets the main content article element of the profile card */
 /* The article is acting as a container for the header and bio content */
-.cardcont {
-  width: calc(100% - var(--pfpwidth));
-  margin: 16px 24px;
+.card-text {
+  width: var(--pfpwidth);
+  height: 100%;
+  margin: var(--textmargin) 0;
+  overflow: scroll;
 }
 
 /* This style targets p child elements of the "cardcont" class */
 /* Here, we're applying styles to our large paragraph bio */
-.cardcont p {
+.card-text p {
   font-size: var(--smallfont);
 }
 
@@ -78,5 +83,12 @@ h2 {
 @media (min-width: 601px) {
   .card-container {
     flex-direction: row;
+    max-height: var(--pfpwidth);
+  }
+
+  .card-text {
+    width: calc(100% - calc(var(--pfpwidth) + calc(2 * var(--textmargin))));
+    min-width: var(--pfpwidth);
+    margin: var(--textmargin);
   }
 }
