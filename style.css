@@ -1,0 +1,38 @@
+/* This pseudo class targets the highest-level parent of the HTML document */
+/* It is similar to the 'html' or 'body' selector */
+/* It's primary use case is storing variables that should be globally available */
+:root {
+  --bgcol: #50fabe;
+  --textcol: #1e1e1e;
+  --smallfont: 16px;
+  --largefont: 32px;
+}
+
+/* Here we are using the universal selector */
+/* This targets every style in our document */
+/* It's primary use case is setting universal styles or overriding default styles,
+which is exactly how we're using it here */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* This body selector is primarily used for actually applying styles */
+/* It is similar to ':root', except root is better used for storing variables FOR styles */
+/* Here, we're setting some over-arching styles */
+body {
+  background-color: var(--bgcol);
+  color: var(--textcol);
+}
+
+/* This style targets h2 child elements of the "cardhead" class */
+/* We're using this to style our profile card header */
+.cardhead h2 {
+  font-size: var(--largefont);
+}
+
+.cartcont {
+  font-size: var(--smallfont);
+}
